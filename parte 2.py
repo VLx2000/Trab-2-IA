@@ -28,5 +28,5 @@ for j in range(1, 15):
 plt.plot(group_range, soma_quadrados_distancias, 'bx-')
 plt.xlabel('group range')
 plt.ylabel('Soma dos Quadrados das Distâncias')
-plt.title('Cotovelo')
+plt.title('Método do Cotovelo para encontrar o melhor valor de group_range')
 plt.show()
