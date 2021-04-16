@@ -8,6 +8,7 @@ from sklearn.metrics import classification_report
 
 # X - Matriz de atributos y - vetor de classes
 X, y = load_wine(return_X_y=True)
+data = load_wine()
 
 # Transformando nominais em binarios
 OneHotEncoder(X)
@@ -24,15 +25,15 @@ arvore = arvore.fit(X_train, y_train)
 fig = plt.figure(figsize=(10,10))
 fig = tree.plot_tree(arvore)
 
-# Classifica os dados
-previsto = arvore.predict(X_test)
-
 # Plota Matriz
-class_names = y
+class_names = list(data.target_names)
 title = "Matriz Confusão"
 disp = plot_confusion_matrix(arvore, X_test, y_test, display_labels=class_names, cmap=plt.cm.Blues)
 disp.ax_.set_title(title)
 plt.show()
+
+# Classifica os dados
+previsto = arvore.predict(X_test)
 
 # Printa resultados
 print("Relatório")
