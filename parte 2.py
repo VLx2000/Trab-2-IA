@@ -12,7 +12,7 @@ OneHotEncoder(X)
 soma_quadrados_distancias = []
 
 # Definindo intervalo para nº de grupos
-group_range = range(1, 15)
+group_range = range(1, 31)
 
 # Aplicando algoritmo para valores no intervalo definido
 for i in group_range:
@@ -21,7 +21,7 @@ for i in group_range:
     # Coletando valor do indice
     soma_quadrados_distancias.append(kmeans.inertia_)
 
-for j in range(1, 15):
+for j in range(1, 31):
     print(f"Grupo {j}: {soma_quadrados_distancias[j - 1]}")
 
 # Plotando o grafico
