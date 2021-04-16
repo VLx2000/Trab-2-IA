@@ -16,7 +16,7 @@ group_range = range(1, 31)
 
 # Aplicando algoritmo para valores no intervalo definido
 for i in group_range:
-    kmeans = KMeans(n_clusters=i, init='random')
+    kmeans = KMeans(n_clusters=i)
     kmeans.fit(X)
     # Coletando valor do indice
     soma_quadrados_distancias.append(kmeans.inertia_)
